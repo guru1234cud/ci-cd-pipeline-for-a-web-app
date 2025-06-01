@@ -27,7 +27,7 @@ jobs:
         env:
           DOCKER_UNAME: ${{secrets.DOCKER_UNAME}}
           DOCKER_PASSWD: ${{secrets.DOCKER_PASSWD}}
-        run: docker login -u $DOCKER_UNAME -P $DOCKER_PASSWD
+        run: docker login -u $DOCKER_UNAME -p $DOCKER_PASSWD
 
       # Runs a set of commands using the runners shell
       - name: build a docker image
