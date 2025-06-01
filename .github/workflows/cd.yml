@@ -1,2 +1,13 @@
-name: CD for the app
 
+name: cd pipeline
+
+on:
+  workflow_dispatch:  # Allows you to trigger it manually from GitHub UI
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Hello
+        run: echo "Hello from GitHub Actions!"
