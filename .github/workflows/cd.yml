@@ -1,13 +1,20 @@
-
-name: cd pipeline
+name: CD
 
 on:
-  workflow_dispatch:  # Allows you to trigger it manually from GitHub UI
-
+  workflow_run:
+    workflows: ['CI'] # Allows you to trigger it manually from GitHub UI
+    types: 
+      - completed
 jobs:
-  say-hello:
-    runs-on: ubuntu-latest
+ build:
+  runs-on: self-hosted
 
-    steps:
-      - name: Print Hello
-        run: echo "Hello from GitHub Actions!"
+  steps:
+    - name: Print Hello
+      run: echo "Hello from GitHub Actions!"
+    - name: pull docker image
+      run: sudo docker pull guru506/ci.cd_pipeline:latest
+    - name: delete prvious image
+      run: docker rm -f ci.cd_pipeline-container || true
+    - name: run the image
+      run: sudo docker run -d -p 8080:8080 ci.cd_pipeline-container guru506/ci.cd_pipeline
