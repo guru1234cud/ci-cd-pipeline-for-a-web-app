@@ -16,5 +16,7 @@ jobs:
       run: sudo docker pull guru506/ci.cd_pipeline:latest
     - name: delete prvious image
       run: docker rm -f ci.cd_pipeline-container || true
+    - name: check images
+      run: sudo docker images
     - name: run the image
-      run: sudo docker run -d -p 8080:8080 ci.cd_pipeline-container guru506/ci.cd_pipeline
+      run: sudo docker run -d -p 8080:8080 --name ci.cd_pipeline-container guru506/ci.cd_pipeline
