@@ -5,7 +5,7 @@ app.get('/',(req,res)=>{
     res.json(
         {
             status:"success"
-            ,message:"data"
+            ,message:"your first message via ci/cd"
         }
     )
 })
