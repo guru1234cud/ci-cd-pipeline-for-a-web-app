@@ -31,6 +31,6 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: build a docker image
-        run: docker build -t ci.cd_pipepline .
+        run: docker build -t ci.cd_pipepline:latest .
       - name: push to docker
         run: docker push guru506/ci.cd_pipeline:latest
