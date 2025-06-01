@@ -35,4 +35,4 @@ jobs:
       - name: check for image
         run: docker images
       - name: push to docker
-        run: docker push guru506/ci.cd_pipeline:latest
+        run: docker push ci.cd_pipeline:latest
