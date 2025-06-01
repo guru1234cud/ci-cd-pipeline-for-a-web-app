@@ -34,5 +34,7 @@ jobs:
         run: docker build -t guru506/ci.cd_pipeline:latest .
       - name: check for image
         run: docker images
+      - name: check images
+        run: sudo docker images
       - name: push to docker
         run: docker push guru506/ci.cd_pipeline:latest
