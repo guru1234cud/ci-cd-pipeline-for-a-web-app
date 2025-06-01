@@ -10,4 +10,4 @@ app.get('/',(req,res)=>{
     )
 })
 
-app.listen(8080,()=>console.log("server is running"))
+app.listen(8080,()=>console.log("server is running in the port 8080"))
