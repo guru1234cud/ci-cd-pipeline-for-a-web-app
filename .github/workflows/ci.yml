@@ -33,4 +33,4 @@ jobs:
       - name: build a docker image
         run: docker build -t ci.cd-pipepline .
       - name: push to docker
-        run: docker push guru506/ci.cd_pipeline:latest
+        run: docker push guru506/ci.cd-pipeline:latest
