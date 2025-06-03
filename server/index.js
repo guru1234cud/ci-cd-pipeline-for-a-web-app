@@ -5,7 +5,7 @@ app.get('/',(req,res)=>{
     res.json(
         {
             status:"success"
-            ,message:"your first message via ci/cd pipeline by guru"
+            ,message:"your first message via ci/cd pipeline by guru and i am making a test to it"
         }
     )
 })

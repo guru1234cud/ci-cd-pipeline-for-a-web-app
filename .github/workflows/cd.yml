@@ -16,6 +16,9 @@ jobs:
       run: sudo docker pull guru506/ci.cd_pipeline:latest
     - name: delete prvious image
       run: docker rm -f ci.cd_pipeline-container || true
+    - name: Clean up old containers/images
+      run: |
+        docker system prune -af
     - name: check images
       run: sudo docker images
     - name: run the image
