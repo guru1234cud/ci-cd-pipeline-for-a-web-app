@@ -65,6 +65,6 @@ Before setting up:
 
 ```mermaid
 flowchart LR
-    A[Push Code to GitHub] --> B[CI Workflow: Build & Test]
-    B --> C[CD Workflow: Deploy to EC2 (Self-Hosted Runner)]
-    C --> D[Application Live 🚀]
+    A["Push Code to GitHub"] --> B["CI Workflow: Build & Test"]
+    B --> C["CD Workflow: Deploy to EC2 Self-Hosted Runner"]
+    C --> D["Application Live 🚀"]
