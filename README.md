@@ -52,18 +52,19 @@ Before setting up:
   docker --version
 ### 2.Install & Configure Self-Hosted Runner
 - Follow the official GitHub Docs here:
-- link:https://docs.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-runners
+- link: https://docs.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-runners
 - This guide walks you through:
     - Downloading the runner package
     - Registering it with your GitHub repository
     - Running the runner manually
     - Configuring it as a service for automatic startup
 
-## 🖼️ Workflow Visualization
+---
 
-- The CI pipeline builds & tests on every push.
-- The CD pipeline deploys using a **self-hosted EC2 runner**.
-- Docker ensures consistency across environments.
+## CI/CD Pipeline
 
-![CI Workflow](./assets/ci.png)
-![CD Workflow](./assets/cd.png)
+```mermaid
+flowchart LR
+    A[Push Code to GitHub] --> B[CI Workflow: Build & Test]
+    B --> C[CD Workflow: Deploy to EC2 (Self-Hosted Runner)]
+    C --> D[Application Live 🚀]
