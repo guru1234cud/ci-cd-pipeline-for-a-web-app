@@ -48,3 +48,22 @@ Before setting up:
   ```bash
   sudo apt update && sudo apt install docker.io -y
   sudo usermod -aG docker ubuntu
+  newgrp docker
+  docker --version
+### 2.Install & Configure Self-Hosted Runner
+- Follow the official GitHub Docs here:
+- link:https://docs.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-runners
+- This guide walks you through:
+    - Downloading the runner package
+    - Registering it with your GitHub repository
+    - Running the runner manually
+    - Configuring it as a service for automatic startup
+
+## 🖼️ Workflow Visualization
+
+- The CI pipeline builds & tests on every push.
+- The CD pipeline deploys using a **self-hosted EC2 runner**.
+- Docker ensures consistency across environments.
+
+![CI Workflow](./assets/ci.png)
+![CD Workflow](./assets/cd.png)
